@@ -1,7 +1,7 @@
 # --- Basic options --- #
 
 # Name of website
-title: My website
+title: Katerina Boyer
 
 # Short description of your site
 description: Website to host my resume and personal information
@@ -13,10 +13,12 @@ author: Katerina Boyer
 
 navbar-links:
   About Me: "aboutme"
+  Resume: "resume"
+  Projects: "projects" 
   Resources:
     - Beautiful Jekyll: "https://beautifuljekyll.com"
     - Learn markdown: "https://www.markdowntutorial.com/"
-  Author's home: "https://deanattali.com"
+  
 
 # --- Logo --- #
 
