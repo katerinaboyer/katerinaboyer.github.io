@@ -12,7 +12,13 @@ layout: page
   
   <div class="row">
   <div class="column">
-    <div class="card">Slackbot App</div>
+    <div class="card">
+      <h3>Slackbot App</h3>
+      <p>In the Summer of 2020, myself and two other interns worked on a cross organizational project between HR and engineering. The overarching goal of the project was to create an "HR Intranet" via Slack to disseminate information to employees in an easy to use, chatty way. </p>
+      <p>We decided a Slack Chatbot would be the best solution. Users in the organization's workspace could be in any channel, invoke a slash command, and our application would respond with links, documents, forms, or messages. The first iteration of this project would be a handful of links to Workday pages via the Employee okta sites.</p>
+      <p>The architecture of the app started off by creating a Bot app using the Slack API. Next, we had to compose the payload that would be returned to the user invoking the slash command. Slack has a great "Block Kit Builder" for this. For the backend, our company tech stack uses NestJS and Typescript. The Controllers in NestJS are responsible for routing HTTP requests to desired endpoints. We used the Post decorators to instantiate a handler for the specific endpoint, which would call a method we defined in a NestJS Service Provider and send the body, or the slash command text, to the Service method for handling. In our Service, we take care of authentication tokens and Slack Channel Ids. We define a secretMessage method that makes the Slackbot response ephemeral to the specific user, and then define a method for each different slash command that defines a payload to send back to the user."</p>    
+      <p> Further iterations I worked on included displaying popup modal forms on command invocation. Slack has their own web api you can use for block kit displays, and the setup is almost identical to the process describe above: with the addition of two additional methods in the Service. To handle any interactions with modals in Slack, we need to deinfe methods that receive payloads from the modal form a user filled out, and in this instance we wanted to send that content in a Slack message to an HR team member. The structure of this method is similar to the slash command methods above, except that we need to get a specific user ID to route the message to vs. using the one sent by invoking the slash command.</p>
+    </div>
   </div>
   <div class="column">
     <div class="card">Refactoring JavaScript APIs to TypeScript</div>
